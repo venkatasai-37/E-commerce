@@ -1,0 +1,257 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+  background-color: #ffffff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+#logo {
+  cursor: pointer;
+}
+
+button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  margin: 0 10px;
+  padding: 8px 12px;
+  transition: all 0.3s ease;
+  color: #333;
+}
+
+button:hover {
+  background-color: #f1f1f1;
+  border-radius: 8px;
+}
+
+#favourite img, 
+#cart img {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+}
+
+.input {
+  flex: 1;
+  max-width: 400px;
+  padding: 8px 12px;
+  border: 1px solid #ddd;
+  border-radius: 20px;
+  outline: none;
+  margin: 0 15px;
+  font-size: 16px;
+}
+
+.input::placeholder {
+  color: #aaa;
+}
+
+.input:focus {
+  border-color: #333;
+}
+
+
+#banner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 10px 500px 10px;
+}
+
+/* img {
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+} */
+
+
+  .product-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Center items */
+    gap: 20px; /* Space between items */
+    padding: 20px;
+  }
+  .ProductBox {
+    width: 280px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background: #fff;
+    text-align: center;
+    padding: 15px;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  }
+  
+  .ProductBox:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  }
+  
+  #productImage {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 10px;
+  }
+  
+  h2 {
+    font-size: 1.2rem;
+    margin: 10px 0;
+    color: #333;
+  }
+  
+  p {
+    font-size: 0.9rem;
+    color: #666;
+    margin: 5px 0;
+  }
+  
+  /* Container to align buttons side by side */
+.buttonContainer {
+  display: flex;
+  align-items: center;
+  
+  justify-content: center;
+  margin-top: 10px;
+  
+  
+  border-radius: 10px;
+  
+  
+  max-width: 300px;
+  width: 100%;
+  transition: all 0.3s ease;
+}
+
+.buttonContainer:hover {
+  
+  transform: translateY(-2px);
+}
+
+/* Add to Cart Button */
+.addToCartButton {
+  background: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease-in-out;
+}
+
+.addToCartButton:hover {
+  background: #0056b3;
+}
+
+#wishlist {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 5px;
+  transition: transform 0.2s, filter 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #fff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+#wishlist img {
+  width: 30px;
+  height: 30px;
+  object-fit: contain;
+  
+}
+
+#wishlist:hover {
+  transform: scale(1.1);
+  filter: grayscale(0%);
+  background-color: #f0f0f0;
+}
+
+#empty-cart {
+  
+  width: 400px;
+  margin: 20px auto;
+  display: block;
+  opacity: 0.8;
+}
+
+#cart-empty-msg {
+  text-align: center;
+  font-size: 1.8rem;
+  color: #555;
+  margin-top: 10px;
+  font-weight: 500;
+}
+
+/* Plus-Minus Button Container */
+.plusMinusContainer {
+  display: flex;
+  align-items: center;
+  
+  justify-content: center;
+  margin-top: 10px;
+  border: 2px solid #ddd;
+  border-radius: 10px;
+  background-color: #f9f9f9;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 200px;
+  width: 100%;
+  transition: all 0.3s ease;
+}
+
+.plusMinusContainer:hover {
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  transform: translateY(-2px);
+}
+
+/* Plus and Minus Buttons */
+.plusminusButton {
+  background-color: #007bff;
+  border: none;
+  border-radius: 50%;
+  padding: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 40px;
+  min-height: 40px;
+  color: white;
+}
+
+.plusminusButton:hover {
+  background-color: #0056b3;
+  transform: scale(1.1);
+}
+
+.plusminusButton img {
+  width: 20px;
+  height: 20px;
+  filter: invert(1); /* Makes the image white */
+}
+
+/* Quantity Display */
+.quantityDisplay {
+  font-size: 1.5rem;
+  color: #333;
+  min-width: 30px;
+  text-align: center;
+  padding: 5px 10px;
+  border-radius: 5px;
+  background-color: #eaeaea;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+}
