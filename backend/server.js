@@ -3,7 +3,8 @@ const mongoose=require('mongoose')
 const connectionURL = 'mongodb://127.0.0.1:27017/ecommerce_db'
 const path=require('path')
 const router = require('./routes/productRoutes');
-const publicDirectoryPath = path.join(__dirname, '../build')
+const chatbotRouter = require('./routes/chatbot');
+const publicDirectoryPath = path.join(__dirname, '../frontend/build')
 const cors=require('cors')
 
 const app=express()

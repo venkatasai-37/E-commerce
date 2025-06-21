@@ -10,6 +10,7 @@ import  Womens  from './pages/womens';
 // import { CartProvider } from './context/CartContext';
 import { Provider } from 'react-redux';
 import { store } from './redux/store';
+import Chatbot from './components/Chatbot';
 
 
 // A simple React functional component
@@ -26,6 +27,7 @@ const App = () => {
         <Route path='/mens' element={<Mens />}/>
         <Route path='/womens' element={<Womens />}/>
     </Routes>
+    <Chatbot />
   </Router>
   {/* </CartProvider> */}
   </>
