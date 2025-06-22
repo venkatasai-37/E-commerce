@@ -11,6 +11,7 @@ import  Womens  from './pages/womens';
 import { Provider } from 'react-redux';
 import { store } from './redux/store';
 import Chatbot from './components/Chatbot';
+import Recommendations from './pages/Recommendations';
 
 
 // A simple React functional component
@@ -26,6 +27,7 @@ const App = () => {
         <Route path="/cart" element={<Cart />} />
         <Route path='/mens' element={<Mens />}/>
         <Route path='/womens' element={<Womens />}/>
+        <Route path='/recommendations' element={<Recommendations />}/>
     </Routes>
     <Chatbot />
   </Router>

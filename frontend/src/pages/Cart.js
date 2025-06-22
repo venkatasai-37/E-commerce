@@ -50,7 +50,7 @@ export const Cart = () => {
     } // Only fetch if there are items in the cart
       const productIds = cartItems.map((item) => item.productId).join(",");
         
-        fetch(`http://localhost:3000/products?_id=${productIds}`) 
+        fetch(`http://localhost:5000/products?_id=${productIds}`) 
             .then((res) => res.json())
             .then((data) => {
 

@@ -1,6 +1,7 @@
 const express = require("express");
 const axios = require("axios");
-const Product = require("../models/Product");
+const Product = require("../models/products");
+
 
 const router = express.Router();
 
