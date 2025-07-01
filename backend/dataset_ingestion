@@ -1,0 +1,27 @@
+
+const mongoose = require('mongoose');
+const Product = require('./models/products'); // Adjust path to your model
+const products = require('./products2.json');
+
+async function importProducts() {
+  try {
+    // Connect to MongoDB
+    await mongoose.connect('mongodb://127.0.0.1:27017/ecommerce_db');
+    
+    // // Clear existing products (optional)
+    // await Product.deleteMany({});
+    // console.log('Cleared existing products');
+    
+    // Insert new products
+    await Product.insertMany(products);
+    console.log(`Successfully imported ${products.length} products!`);
+    
+  } catch (error) {
+    console.error('Import failed:', error);
+  } finally {
+    mongoose.connection.close();
+  }
+}
+
+// Run the import
+importProducts();

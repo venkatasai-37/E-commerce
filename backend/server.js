@@ -4,6 +4,7 @@ const connectionURL = 'mongodb://127.0.0.1:27017/ecommerce_db'
 // const path=require('path')
 const router = require('./routes/productRoutes');
 const chatbotRouter = require('./routes/chatbot');
+const cartRoutes = require('./routes/cart');
 // const publicDirectoryPath = path.join(__dirname, '../frontend/build')
 const cors=require('cors')
 
@@ -15,6 +16,7 @@ app.use(cors());
 //     credentials: true // If you plan to send cookies/auth headers
 //   }));
 app.use(router);
+app.use("/cart", cartRoutes);
 app.use(chatbotRouter);
 
 // app.get('*', (req, res) => {

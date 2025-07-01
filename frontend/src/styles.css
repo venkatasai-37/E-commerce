@@ -136,13 +136,14 @@ button:hover {
     padding: 20px;
   }
   .ProductBox {
-    width: 280px;
+    width: 260px;
     border-radius: 10px;
     overflow: hidden;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     background: #fff;
     text-align: center;
     padding: 15px;
+   
     transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
   }
   
@@ -312,3 +313,64 @@ button:hover {
   background-color: #eaeaea;
   box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
 }
+.cart-summary-container {
+  position: fixed;
+  right: 0;
+  top: 110px; /* adjust based on your header height */
+  width: 260px;
+  padding: 20px;
+  background-color: #fff;
+  border-left: 1px solid #ccc;
+  box-shadow: -2px 0 5px rgba(0,0,0,0.1);
+  height: calc(100% - 80px); /* so it doesn't go under the header */
+  overflow-y: auto;
+  z-index: 1000;
+}
+.cart-summary-container h1 {
+  font-size: 20px;
+  margin-bottom: 16px;
+  text-align: center;
+  color: #333;
+}
+
+.cart-summary-container p {
+  display: flex;
+  justify-content: space-between;
+  margin: 8px 0;
+  font-size: 16px;
+  color: #444;
+}
+
+.cart-summary-container h2 {
+  margin-top: 20px;
+  font-size: 18px;
+  color: #222;
+  text-align: center;
+}
+
+.cart-summary-container button {
+  display: block;
+  width: 100%;
+  margin-top: 16px;
+  padding: 12px;
+  background-color: #007bff;
+  border: none;
+  border-radius: 8px;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.cart-summary-container button:hover {
+  background-color: #0056b3;
+}
+.product-container-with-summary {
+
+   display: grid;
+   grid-template-columns: repeat(auto-fill, minmax(270px, 1fr)); /* Responsive grid */
+   gap: 20px;
+   margin-right: 320px; /* leave space for cart summary */
+   padding: 20px;
+}
+

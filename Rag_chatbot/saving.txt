@@ -1,0 +1,27 @@
+import os
+
+def create_vector_store(docs, save_path="faiss_index"):
+    """
+    Create and save a vector store from the documents
+    """
+    # Check if the FAISS index already exists
+    if os.path.exists(save_path):
+        # Load the vector store from disk
+        vector_store = FAISS.load_local(save_path, HuggingFaceEmbeddings(model_name="sentence-transformers/all-MiniLM-L6-v2"))
+        print("Loaded existing FAISS index from disk.")
+    else:
+        # Split the documents into smaller chunks for better processing
+        text_splitter = RecursiveCharacterTextSplitter(chunk_size=1000, chunk_overlap=200)
+        documents = text_splitter.split_documents(docs)
+
+        # embedding_model is used to convert text into vector embeddings
+        Embeddings = HuggingFaceEmbeddings(model_name="sentence-transformers/all-MiniLM-L6-v2")
+
+        # Create a FAISS vector store from the documents
+        vector_store = FAISS.from_documents(documents, Embeddings)
+
+        # Save the vector store to disk
+        vector_store.save_local(save_path)
+        print("FAISS index created and saved to disk.")
+
+    return vector_store

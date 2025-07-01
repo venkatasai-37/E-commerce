@@ -1,104 +1,111 @@
 import { useEffect, useState } from "react";
 import ProductCard from "../components/ProductCard";
-// import { useCart } from "../context/CartContext";
-import { useDispatch, useSelector } from 'react-redux';
-import { increaseQuantity, decreaseQuantity, removeFromCart } from '../redux/cartSlice';
+import {
+  getCart,
+  addToCart,
+  removeFromCart,
+  clearCart
+} from "../services/CartService"; // We'll define this service
 
-const CartSummary=({cartProducts=[]})=>{
-  const no_of_items= cartProducts.length;
-  const Total_mrp = cartProducts.reduce((sum, product) => sum + (product.price * product.quantity || 0), 0);
-  const Total_dicount=0;
-  const platform_fee=10;
-  const Taxes=10;
-return(
-  <div>
+const CartSummary = ({ cartProducts = [], cartItems = [], onClearCart }) => {
+  const no_of_items = cartItems.length;
+
+  const Total_mrp = cartItems.reduce((sum, item) => {
+    const product = cartProducts.find((product) => product._id === item.productId);
+    const price = product ? product.price : 0;
+    return sum + price * item.quantity;
+  }, 0);
+
+  const Total_discount = 0;
+  const platform_fee = 10;
+  const Taxes = 10;
+
+  return (
+    <div>
       <h1>Cart summary</h1>
-      <p>No of items :  <b>{no_of_items}</b></p>
-      <p>Total MRP :<b>${Total_mrp}</b></p>
-      <p>Total Discount :<b>${Total_dicount}</b></p>
-      <p>Platform fee : <b>${platform_fee}</b></p>
-      <p>Taxes : <b>${Taxes}</b></p>
-      <h2>Total Amount : ${Total_mrp+platform_fee+Taxes-Total_dicount} </h2>
+      <p>No of items: <b>{no_of_items}</b></p>
+      <p>Total MRP: <b>${Total_mrp.toFixed(2)}</b></p>
+      <p>Total Discount: <b>${Total_discount}</b></p>
+      <p>Platform fee: <b>${platform_fee}</b></p>
+      <p>Taxes: <b>${Taxes}</b></p>
+      <h2>Total Amount: ${(Total_mrp + platform_fee + Taxes - Total_discount).toFixed(2)}</h2>
       <button>Place order</button>
-
+      <button onClick={onClearCart}>Clear Cart</button>
     </div>
-)
+  );
 };
+
 
 export const Cart = () => {
-  // const { cartItems } = useCart();  // Using the cartItems from context
-  // console.log(cartItems)
-  const dispatch = useDispatch();
-  const cartItems = useSelector(state => state.cart.items);
-  if (!cartItems|| cartItems.length===0){
-    return(
-      <>
-      <img id="empty-cart" src="/images/empty-cart.jpg"></img>
-      <h2 id="cart-empty-msg">Your cart is empty..</h2>
-      </>
-      
-    )
-  }
+  const [cartProducts, setCartProducts] = useState([]);
+  const [cartItems, setCartItems] = useState([]);
 
+  const loadCart = async () => {
+    try {
+      const data = await getCart();
+      setCartItems(data.items);
+    } catch (err) {
+      console.error("Error loading cart:", err);
+    }
+  };
 
-  const [cartProducts, setCartProducts] = useState([]);  // Correct useState for cartProducts
+  const handleClearCart = async () => {
+    try {
+      await clearCart();
+      setCartItems([]);
+      setCartProducts([]);
+    } catch (error) {
+      console.error("Error clearing cart:", error);
+    }
+  };
 
   useEffect(() => {
-    if (!cartItems ||cartItems.length === 0) {
-      setCartProducts([]); // Clear products when cart is empty
+    loadCart();
+  }, []);
+
+  useEffect(() => {
+    if (!cartItems || cartItems.length === 0) {
+      setCartProducts([]);
       return;
-    } // Only fetch if there are items in the cart
-      const productIds = cartItems.map((item) => item.productId).join(",");
-        
-        fetch(`http://localhost:5000/products?_id=${productIds}`) 
-            .then((res) => res.json())
-            .then((data) => {
-
-              // Map quantity to product data
-          const productsWithQuantity = data.map((product) => {
-            const matchingCartItem = cartItems.find(
-              (item) => item.productId === product._id
-            );
-            return { ...product, quantity: matchingCartItem?.quantity || 1 };
-          });
-          setCartProducts(productsWithQuantity);
-        })
-        .catch((error) => console.error("Error fetching products:", error));
-    
-  }, [cartItems]);
-//                 console.log("Fetched Products:", data); 
-//                 setCartProducts(data);
-//             })
-//             .catch((error) => console.error("Error fetching products:", error));
-//     }
-// }, [cartItems]);
-
-if (!cartProducts || cartProducts.length === 0) {
-  return (
-    <>
-      <img id="empty-cart" src="/images/empty-cart.jpg" alt="Empty Cart" />
-      <h2 id="cart-empty-msg">Your cart is empty..</h2>
-    </>
-  );
-}
-  return (
-    <div className="product-container">
-      {cartProducts.map((product) => (
-        <ProductCard key={product._id} product={product} />
-      ))}
-    {/* <div>
-        <button onClick={() => dispatch(decreaseQuantity({ productId: item.productId }))}>-</button>
-        <span>{quantity}</span>
-        <button onClick={() => dispatch(increaseQuantity({ productId: item.productId }))}>+</button>
-        {/* <button onClick={() => dispatch(removeFromCart({ productId: item.productId }))}>Remove</button> */}
-    {/* </div> */} 
-    <div>
-      {<CartSummary cartProducts={cartProducts} />
     }
+
+    const productIds = cartItems.map((item) => item.productId).join(",");
+    fetch(`http://localhost:5000/products?_id=${productIds}`)
+      .then((res) => res.json())
+      .then((data) => {
+        setCartProducts(data);
+      })
+      .catch((error) => console.error("Error fetching products:", error));
+  }, [cartItems]);
+
+  if (!cartItems || cartItems.length === 0) {
+    return (
+      <>
+        <img id="empty-cart" src="/images/empty-cart.jpg" alt="Empty Cart" />
+        <h2 id="cart-empty-msg">Your cart is empty..</h2>
+      </>
+    );
+  }
+
+  return (
+    <div className="product-container-with-summary">
+      {cartProducts.map((product) => (
+        <ProductCard
+          key={product._id}
+          product={product}
+          cartItems={cartItems}
+          onCartChange={loadCart}
+        />
+      ))}
+
+      <div className="cart-summary-container">
+        <CartSummary
+          cartProducts={cartProducts}
+          cartItems={cartItems}
+          onClearCart={handleClearCart}
+        />
       </div>
     </div>
-    
   );
 };
-
 export default Cart;

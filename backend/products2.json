@@ -1,0 +1,359 @@
+[
+    {
+      "name": "Olive Green Cargo Pants",
+      "price": 1699,
+      "description": "Durable olive green cargo pants with multiple utility pockets and comfortable straight fit. Perfect for outdoor adventures and casual streetwear styling.",
+      "category": "male",
+      "image": "https://images.unsplash.com/photo-1473966968600-fa801b869a1a?w=300&h=300&fit=crop"
+    },
+    {
+      "name": "Wine Red Formal Blazer",
+      "price": 3299,
+      "description": "Premium wine red formal blazer with tailored fit and luxury fabric blend. Ideal for evening events, parties, and sophisticated business occasions.",
+      "category": "male",
+      "image": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&h=300&fit=crop"
+    },
+    {
+      "name": "Mustard Yellow T-Shirt",
+      "price": 799,
+      "description": "Vibrant mustard yellow t-shirt with crew neck and premium cotton construction. Perfect for adding bold color to casual and contemporary outfits.",
+      "category": "male",
+      "image": "https://images.unsplash.com/photo-1583743814966-8936f37f230f?w=300&h=300&fit=crop"
+    },
+    {
+      "name": "Charcoal Grey Suit",
+      "price": 4999,
+      "description": "Elegant charcoal grey two-piece suit with modern slim fit and wrinkle-resistant fabric. Perfect for weddings, interviews, and formal business meetings.",
+      "category": "male",
+      "image": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&h=300&fit=crop"
+    },
+    {
+      "name": "Light Blue Linen Shirt",
+      "price": 1399,
+      "description": "Breathable light blue linen shirt with relaxed fit and natural texture. Ideal for summer occasions, beach wear, and hot weather comfort.",
+      "category": "male",
+      "image": "https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?w=300&h=300&fit=crop"
+    },
+    {
+      "name": "Black Leather Boots",
+      "price": 2899,
+      "description": "Rugged black leather boots with ankle height and durable construction. Perfect for outdoor activities, casual wear, and adding edgy style.",
+      "category": "male",
+      "image": "https://images.unsplash.com/photo-1549298916-b41d501d3772?w=300&h=300&fit=crop"
+    },
+    {
+      "name": "Burgundy Henley Top",
+      "price": 1099,
+      "description": "Stylish burgundy henley top with button placket and soft jersey fabric. Perfect for layering and creating relaxed yet put-together looks.",
+      "category": "male",
+      "image": "https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?w=300&h=300&fit=crop"
+    },
+    {
+      "name": "Tan Corduroy Jacket",
+      "price": 2199,
+      "description": "Classic tan corduroy jacket with vintage appeal and comfortable fit. Perfect for autumn styling and adding textural interest to outfits.",
+      "category": "male",
+      "image": "https://images.unsplash.com/photo-1551698618-1dfe5d97d256?w=300&h=300&fit=crop"
+    },
+    {
+      "name": "Forest Green Polo",
+      "price": 999,
+      "description": "Rich forest green polo shirt with classic collar and moisture-wicking fabric. Ideal for golf, casual dining, and semi-formal occasions.",
+      "category": "male",
+      "image": "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=300&h=300&fit=crop"
+    },
+    {
+      "name": "Stone Wash Denim",
+      "price": 1799,
+      "description": "Premium stone wash denim jeans with vintage fade and comfortable stretch. Features classic five-pocket design and relaxed straight fit.",
+      "category": "male",
+      "image": "https://images.unsplash.com/photo-1542272604-787c3835535d?w=300&h=300&fit=crop"
+    },
+    {
+      "name": "Cream Cable Knit Sweater",
+      "price": 1899,
+      "description": "Cozy cream cable knit sweater with traditional pattern and wool blend fabric. Perfect for cold weather and achieving classic winter style.",
+      "category": "male",
+      "image": "https://images.unsplash.com/photo-1576566588028-4147f3842f27?w=300&h=300&fit=crop"
+    },
+    {
+      "name": "Slate Blue Dress Shirt",
+      "price": 1499,
+      "description": "Sophisticated slate blue dress shirt with spread collar and wrinkle-free fabric. Perfect for business meetings and professional environments.",
+      "category": "male",
+      "image": "https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?w=300&h=300&fit=crop"
+    },
+    {
+      "name": "Khaki Bomber Jacket",
+      "price": 1999,
+      "description": "Modern khaki bomber jacket with ribbed trim and lightweight construction. Perfect for layering and contemporary streetwear styling.",
+      "category": "male",
+      "image": "https://images.unsplash.com/photo-1551698618-1dfe5d97d256?w=300&h=300&fit=crop"
+    },
+    {
+      "name": "Indigo Wash Jeans",
+      "price": 1599,
+      "description": "Deep indigo wash jeans with tapered fit and premium denim construction. Perfect for casual wear and versatile everyday styling.",
+      "category": "male",
+      "image": "https://images.unsplash.com/photo-1542272604-787c3835535d?w=300&h=300&fit=crop"
+    },
+    {
+      "name": "Rust Orange Sweatshirt",
+      "price": 1299,
+      "description": "Trendy rust orange sweatshirt with crew neck and soft fleece interior. Perfect for casual wear and making bold fashion statements.",
+      "category": "male",
+      "image": "https://images.unsplash.com/photo-1556821840-3a63f95609a7?w=300&h=300&fit=crop"
+    },
+    {
+      "name": "Navy Striped Rugby Shirt",
+      "price": 1399,
+      "description": "Classic navy striped rugby shirt with collar and long sleeves. Perfect for casual weekends and achieving preppy, athletic-inspired looks.",
+      "category": "male",
+      "image": "https://images.unsplash.com/photo-1603252109303-2751441dd157?w=300&h=300&fit=crop"
+    },
+    {
+      "name": "Camel Wool Coat",
+      "price": 3799,
+      "description": "Luxurious camel wool coat with double-breasted design and tailored silhouette. Perfect for formal occasions and sophisticated winter styling.",
+      "category": "male",
+      "image": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&h=300&fit=crop"
+    },
+    {
+      "name": "Emerald Green Shorts",
+      "price": 899,
+      "description": "Vibrant emerald green shorts with comfortable inseam and cotton blend fabric. Perfect for summer activities and beach vacation wear.",
+      "category": "male",
+      "image": "https://images.unsplash.com/photo-1591195853828-11db59a44f6b?w=300&h=300&fit=crop"
+    },
+    {
+      "name": "Plaid Flannel Pajamas",
+      "price": 1599,
+      "description": "Comfortable plaid flannel pajama set with classic pattern and relaxed fit. Perfect for lounging at home and cozy winter nights.",
+      "category": "male",
+      "image": "https://images.unsplash.com/photo-1602810316498-ab67cf68c8e1?w=300&h=300&fit=crop"
+    },
+    {
+      "name": "Cognac Leather Wallet",
+      "price": 1299,
+      "description": "Premium cognac leather wallet with multiple card slots and bill compartment. Perfect accessory for everyday use and professional settings.",
+      "category": "male",
+      "image": "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=300&h=300&fit=crop"
+    },
+    {
+      "name": "Teal Athletic Shorts",
+      "price": 699,
+      "description": "Performance teal athletic shorts with moisture-wicking fabric and comfortable elastic waistband. Perfect for gym workouts and sports activities.",
+      "category": "male",
+      "image": "https://images.unsplash.com/photo-1544966503-7cc5ac882d5f?w=300&h=300&fit=crop"
+    },
+    {
+      "name": "Heather Grey Joggers",
+      "price": 999,
+      "description": "Comfortable heather grey joggers with tapered fit and soft cotton blend. Perfect for casual wear, workouts, and relaxed home comfort.",
+      "category": "male",
+      "image": "https://images.unsplash.com/photo-1544966503-7cc5ac882d5f?w=300&h=300&fit=crop"
+    },
+    {
+      "name": "Midnight Blue Tuxedo",
+      "price": 5999,
+      "description": "Elegant midnight blue tuxedo with satin lapels and formal tailoring. Perfect for black-tie events, galas, and special formal occasions.",
+      "category": "male",
+      "image": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&h=300&fit=crop"
+    },
+    {
+      "name": "Copper Canvas Sneakers",
+      "price": 1499,
+      "description": "Unique copper canvas sneakers with comfortable sole and contemporary design. Perfect for casual wear and adding metallic accent to outfits.",
+      "category": "male",
+      "image": "https://images.unsplash.com/photo-1549298916-b41d501d3772?w=300&h=300&fit=crop"
+    },
+    {
+      "name": "Ash Grey Cardigan",
+      "price": 1699,
+      "description": "Sophisticated ash grey cardigan with button closure and soft knit construction. Perfect for layering and professional casual environments.",
+      "category": "male",
+      "image": "https://images.unsplash.com/photo-1576566588028-4147f3842f27?w=300&h=300&fit=crop"
+    },
+    {
+      "name": "Coral Pink Sundress",
+      "price": 1599,
+      "description": "Flowing coral pink sundress with adjustable straps and lightweight fabric. Perfect for summer outings, vacations, and warm weather occasions.",
+      "category": "female",
+      "image": "https://images.unsplash.com/photo-1595777457583-95e059d581b8?w=300&h=300&fit=crop"
+    },
+    {
+      "name": "Emerald Green Blazer",
+      "price": 2399,
+      "description": "Striking emerald green blazer with tailored fit and professional styling. Perfect for business meetings, interviews, and sophisticated workwear.",
+      "category": "female",
+      "image": "https://images.unsplash.com/photo-1551028719-00167b16eac5?w=300&h=300&fit=crop"
+    },
+    {
+      "name": "Dusty Rose Midi Skirt",
+      "price": 1299,
+      "description": "Elegant dusty rose midi skirt with A-line silhouette and flowing fabric. Perfect for date nights, brunches, and feminine styling occasions.",
+      "category": "female",
+      "image": "https://images.unsplash.com/photo-1583496661160-fb5886a13804?w=300&h=300&fit=crop"
+    },
+    {
+      "name": "Ivory Silk Blouse",
+      "price": 1899,
+      "description": "Luxurious ivory silk blouse with delicate draping and professional cut. Perfect for upscale meetings, formal events, and elegant styling.",
+      "category": "female",
+      "image": "https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?w=300&h=300&fit=crop"
+    },
+    {
+      "name": "Lavender Knit Cardigan",
+      "price": 1499,
+      "description": "Soft lavender knit cardigan with open front and cozy texture. Perfect for layering over dresses and creating comfortable casual looks.",
+      "category": "female",
+      "image": "https://images.unsplash.com/photo-1571945153237-4929e783af4a?w=300&h=300&fit=crop"
+    },
+    {
+      "name": "Chocolate Brown Boots",
+      "price": 2199,
+      "description": "Stylish chocolate brown boots with medium heel and versatile design. Perfect for autumn styling and transitional weather footwear needs.",
+      "category": "female",
+      "image": "https://images.unsplash.com/photo-1543163521-1bf539c55dd2?w=300&h=300&fit=crop"
+    },
+    {
+      "name": "Sage Green Jumpsuit",
+      "price": 1999,
+      "description": "Modern sage green jumpsuit with wide-leg design and flattering waist tie. Perfect for contemporary styling and effortless chic occasions.",
+      "category": "female",
+      "image": "https://images.unsplash.com/photo-1566479179817-03db1dcd0633?w=300&h=300&fit=crop"
+    },
+    {
+      "name": "Plum Purple Sweater",
+      "price": 1399,
+      "description": "Rich plum purple sweater with crew neck and soft wool blend. Perfect for cold weather styling and adding deep color to outfits.",
+      "category": "female",
+      "image": "https://images.unsplash.com/photo-1571945153237-4929e783af4a?w=300&h=300&fit=crop"
+    },
+    {
+      "name": "Cream Lace Top",
+      "price": 1199,
+      "description": "Delicate cream lace top with intricate pattern and feminine silhouette. Perfect for romantic occasions, date nights, and elegant styling.",
+      "category": "female",
+      "image": "https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?w=300&h=300&fit=crop"
+    },
+    {
+      "name": "Caramel Wide Leg Pants",
+      "price": 1699,
+      "description": "Sophisticated caramel wide leg pants with high waist and flowing silhouette. Perfect for professional settings and contemporary fashion statements.",
+      "category": "female",
+      "image": "https://images.unsplash.com/photo-1541099649105-f69ad21f3246?w=300&h=300&fit=crop"
+    },
+    {
+      "name": "Burgundy Velvet Dress",
+      "price": 2799,
+      "description": "Luxurious burgundy velvet dress with elegant draping and rich texture. Perfect for evening events, holiday parties, and special occasions.",
+      "category": "female",
+      "image": "https://images.unsplash.com/photo-1595777457583-95e059d581b8?w=300&h=300&fit=crop"
+    },
+    {
+      "name": "Pearl White Sneakers",
+      "price": 1599,
+      "description": "Clean pearl white sneakers with comfortable design and premium materials. Perfect for casual wear, athleisure styling, and everyday comfort.",
+      "category": "female",
+      "image": "https://images.unsplash.com/photo-1560769629-975ec94e6a86?w=300&h=300&fit=crop"
+    },
+    {
+      "name": "Terracotta Wrap Top",
+      "price": 999,
+      "description": "Flattering terracotta wrap top with adjustable tie and flowing fabric. Perfect for casual outings and creating effortless bohemian looks.",
+      "category": "female",
+      "image": "https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?w=300&h=300&fit=crop"
+    },
+    {
+      "name": "Midnight Blue Jeans",
+      "price": 1799,
+      "description": "Deep midnight blue jeans with skinny fit and stretch comfort. Perfect for versatile styling and creating polished casual looks.",
+      "category": "female",
+      "image": "https://images.unsplash.com/photo-1541099649105-f69ad21f3246?w=300&h=300&fit=crop"
+    },
+    {
+      "name": "Rose Gold Watch",
+      "price": 2499,
+      "description": "Elegant rose gold watch with minimalist design and leather strap. Perfect accessory for professional settings and sophisticated styling.",
+      "category": "female",
+      "image": "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=300&h=300&fit=crop"
+    },
+    {
+      "name": "Charcoal Wool Coat",
+      "price": 3499,
+      "description": "Classic charcoal wool coat with double-breasted design and timeless silhouette. Perfect for professional winter wear and elegant styling.",
+      "category": "female",
+      "image": "https://images.unsplash.com/photo-1551028719-00167b16eac5?w=300&h=300&fit=crop"
+    },
+    {
+      "name": "Mint Green Tank Top",
+      "price": 699,
+      "description": "Fresh mint green tank top with relaxed fit and breathable cotton. Perfect for layering, summer wear, and casual comfort styling.",
+      "category": "female",
+      "image": "https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?w=300&h=300&fit=crop"
+    },
+    {
+      "name": "Taupe Crossbody Bag",
+      "price": 1899,
+      "description": "Versatile taupe crossbody bag with adjustable strap and multiple compartments. Perfect for daily use, travel, and hands-free convenience.",
+      "category": "female",
+      "image": "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=300&h=300&fit=crop"
+    },
+    {
+      "name": "Rust Orange Maxi Dress",
+      "price": 2199,
+      "description": "Stunning rust orange maxi dress with flowing silhouette and bohemian style. Perfect for festivals, beach vacations, and statement occasions.",
+      "category": "female",
+      "image": "https://images.unsplash.com/photo-1566479179817-03db1dcd0633?w=300&h=300&fit=crop"
+    },
+    {
+      "name": "Silver Hoop Earrings",
+      "price": 799,
+      "description": "Classic silver hoop earrings with contemporary design and lightweight feel. Perfect for everyday wear and versatile styling options.",
+      "category": "female",
+      "image": "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=300&h=300&fit=crop"
+    },
+    {
+      "name": "Olive Green Utility Jacket",
+      "price": 1999,
+      "description": "Practical olive green utility jacket with multiple pockets and structured fit. Perfect for casual adventures and contemporary streetwear styling.",
+      "category": "female",
+      "image": "https://images.unsplash.com/photo-1551028719-00167b16eac5?w=300&h=300&fit=crop"
+    },
+    {
+      "name": "Blush Pink Loafers",
+      "price": 1799,
+      "description": "Chic blush pink loafers with comfortable sole and modern design. Perfect for professional settings and adding feminine touch to outfits.",
+      "category": "female",
+      "image": "https://images.unsplash.com/photo-1543163521-1bf539c55dd2?w=300&h=300&fit=crop"
+    },
+    {
+      "name": "Forest Green Culottes",
+      "price": 1399,
+      "description": "Trendy forest green culottes with wide-leg design and comfortable elastic waist. Perfect for contemporary styling and comfortable elegance.",
+      "category": "female",
+      "image": "https://images.unsplash.com/photo-1541099649105-f69ad21f3246?w=300&h=300&fit=crop"
+    },
+    {
+      "name": "Copper Metallic Clutch",
+      "price": 999,
+      "description": "Glamorous copper metallic clutch with chain strap and compact design. Perfect for evening events and adding sparkle to special occasion outfits.",
+      "category": "female",
+      "image": "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=300&h=300&fit=crop"
+    },
+    {
+      "name": "Ivory Cashmere Scarf",
+      "price": 1599,
+      "description": "Luxurious ivory cashmere scarf with soft texture and elegant drape. Perfect for sophisticated styling and adding warmth with refined touch.",
+      "category": "female",
+      "image": "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=300&h=300&fit=crop"
+    },
+    {
+      "name": "Periwinkle Blue Cardigan",
+      "price": 1299,
+      "description": "Soft periwinkle blue cardigan with button closure and relaxed fit. Perfect for layering and creating gentle, feminine color combinations.",
+      "category": "female",
+      "image": "https://images.unsplash.com/photo-1571945153237-4929e783af4a?w=300&h=300&fit=crop"
+    }
+  ]

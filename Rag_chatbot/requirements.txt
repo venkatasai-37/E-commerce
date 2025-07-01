@@ -1,0 +1,10 @@
+langchain_openai 
+langchain_core
+python-dotenv
+langchain
+langchain-huggingface
+langchain_community
+langserve
+fastapi
+uvicorn
+faiss-cpu
