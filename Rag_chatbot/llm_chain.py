@@ -29,8 +29,15 @@ Context:
 User Question:
 {question}
 
-Only answer based on the context above. If the answer is not present, say "Sorry, I couldn't find the information." Be clear and concise.
- """
+Instructions:
+-If user asks about a product, provide details like price, category, and any other relevant information.
+- If the user asks other than about a product, provide a helpful and concise answer based on the context but don't give any product reccomendations.
+- Only answer based on the context above
+- If the answer is not present in the context, say "Sorry, I couldn't find the information in the available documents."
+- Be clear, concise, and helpful
+- If you mention specific products, include relevant details like price and category when available
+
+Answer:"""
 
 prompt=PromptTemplate(template=prompt_template,input_variables=["context","question"])
 

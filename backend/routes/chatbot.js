@@ -11,23 +11,24 @@ router.post("/chatbot", async (req, res) => {
     const aiRes = await axios.post("http://localhost:8000/chat", { query });
     const result = aiRes.data.result;
     const productIds = aiRes.data.product_ids || [];
-    console.log("AI Result:", result);
 
-    // Fix syntax error in the if statement
-    if (productIds.length !== 0) {
-      const products = await Product.find({ _id: { $in: productIds } });
-
-      // Use names or categories to get full data (including image, price)
-      // const names = recProducts.map(p => p.name);
-      // const products = await Product.find({ name: { $in: names } });
-
-      res.json(products);
-    } else {
-      res.status(404).send("No products found");
+    let products = [];
+    if (productIds.length > 0) {
+      products = await Product.find({ _id: { $in: productIds } });
     }
+
+    const finalResponse = {
+      result: result,
+      products: products
+    };
+
+    res.json(finalResponse);
   } catch (err) {
     console.error("Chatbot recommendation failed:", err);
-    res.status(500).send("Failed to get recommendations");
+    return res.status(500).json({
+      result: "Sorry, I couldn't process your request right now.",
+      products: []
+    });
   }
 });
 
