@@ -10,10 +10,7 @@ import nest_asyncio
 nest_asyncio.apply()
 
 def load_database():
-    """
-    Load documents from MongoDB 
-    """
-    # Load documents from MongoDB
+
     loader = MongodbLoader(
         connection_string="mongodb://localhost:27017/",
         db_name="ecommerce_db",
@@ -28,12 +25,9 @@ def load_database():
     return docs
 
 def create_vector_store(docs, save_path="faiss_index"):
-    """
-    Create and save a vector store from the documents
-    """
+ 
     # Check if the FAISS index already exists
     if os.path.exists(save_path):
-        # Load the vector store from disk
         vector_store = FAISS.load_local(save_path, HuggingFaceEmbeddings(model_name="sentence-transformers/all-MiniLM-L6-v2"),allow_dangerous_deserialization=True)
         print("Loaded existing FAISS index from disk.")
     else:

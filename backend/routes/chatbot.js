@@ -19,7 +19,7 @@ router.post("/chatbot", async (req, res) => {
 
     const finalResponse = {
       result: result,
-      products: products
+      products: products,
     };
 
     res.json(finalResponse);
@@ -27,7 +27,7 @@ router.post("/chatbot", async (req, res) => {
     console.error("Chatbot recommendation failed:", err);
     return res.status(500).json({
       result: "Sorry, I couldn't process your request right now.",
-      products: []
+      products: [],
     });
   }
 });

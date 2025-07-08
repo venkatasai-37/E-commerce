@@ -4,14 +4,16 @@ import {
   getCart,
   addToCart,
   removeFromCart,
-  clearCart
-} from "../services/CartService"; // We'll define this service
+  clearCart,
+} from "../services/CartService"; 
 
 const CartSummary = ({ cartProducts = [], cartItems = [], onClearCart }) => {
   const no_of_items = cartItems.length;
 
   const Total_mrp = cartItems.reduce((sum, item) => {
-    const product = cartProducts.find((product) => product._id === item.productId);
+    const product = cartProducts.find(
+      (product) => product._id === item.productId
+    );
     const price = product ? product.price : 0;
     return sum + price * item.quantity;
   }, 0);
@@ -23,18 +25,30 @@ const CartSummary = ({ cartProducts = [], cartItems = [], onClearCart }) => {
   return (
     <div>
       <h1>Cart summary</h1>
-      <p>No of items: <b>{no_of_items}</b></p>
-      <p>Total MRP: <b>${Total_mrp.toFixed(2)}</b></p>
-      <p>Total Discount: <b>${Total_discount}</b></p>
-      <p>Platform fee: <b>${platform_fee}</b></p>
-      <p>Taxes: <b>${Taxes}</b></p>
-      <h2>Total Amount: ${(Total_mrp + platform_fee + Taxes - Total_discount).toFixed(2)}</h2>
+      <p>
+        No of items: <b>{no_of_items}</b>
+      </p>
+      <p>
+        Total MRP: <b>${Total_mrp.toFixed(2)}</b>
+      </p>
+      <p>
+        Total Discount: <b>${Total_discount}</b>
+      </p>
+      <p>
+        Platform fee: <b>${platform_fee}</b>
+      </p>
+      <p>
+        Taxes: <b>${Taxes}</b>
+      </p>
+      <h2>
+        Total Amount: $
+        {(Total_mrp + platform_fee + Taxes - Total_discount).toFixed(2)}
+      </h2>
       <button>Place order</button>
       <button onClick={onClearCart}>Clear Cart</button>
     </div>
   );
 };
-
 
 export const Cart = () => {
   const [cartProducts, setCartProducts] = useState([]);

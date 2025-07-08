@@ -28,7 +28,7 @@ router.post("/add", async (req, res) => {
       cart = new Cart({ items: [] });
     }
 
-    const index = cart.items.findIndex(i => i.productId.equals(productId));
+    const index = cart.items.findIndex((i) => i.productId.equals(productId));
     if (index > -1) {
       cart.items[index].quantity += quantity;
     } else {
@@ -51,7 +51,7 @@ router.post("/remove", async (req, res) => {
     const cart = await Cart.findOne();
     if (!cart) return res.status(404).send("Cart not found");
 
-    cart.items = cart.items.filter(i => !i.productId.equals(productId));
+    cart.items = cart.items.filter((i) => !i.productId.equals(productId));
     await cart.save();
     res.json(cart);
   } catch (err) {
@@ -63,7 +63,7 @@ router.post("/remove", async (req, res) => {
 // Clear cart
 router.post("/clear", async (req, res) => {
   try {
-    await Cart.deleteMany();  // or Cart.findOneAndDelete()
+    await Cart.deleteMany(); // or Cart.findOneAndDelete()
     res.send("Cart cleared");
   } catch (err) {
     console.error("Clear cart error:", err);

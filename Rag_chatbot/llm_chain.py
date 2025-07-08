@@ -1,41 +1,45 @@
-
 from langchain_ollama import OllamaLLM
 import os
 from dotenv import load_dotenv
-from vector_db import load_database  # Assuming you have a function to load documents from MongoDB
+from vector_db import load_database 
 from langchain.chains import RetrievalQA
+from langchain.chains import LLMChain
 from langchain.prompts import PromptTemplate
-from vector_db import create_vector_store  # Assuming you have a function to load the FAISS index
+from vector_db import create_vector_store 
+from langchain_core.runnables import RunnablePassthrough
+from operator import itemgetter
 
 load_dotenv()
 os.environ["HUGGINGFACEHUB_API_TOKEN"] = os.getenv("HUGGINGFACEHUB_API_TOKEN")
 print("HuggingFace API Token loaded successfully.")
 
-docs= load_database()  # Load documents from MongoDB or any other source
-vector_store=create_vector_store(docs)  # Load or create the FAISS index
+docs= load_database()  
+vector_store=create_vector_store(docs) 
 
-llm = OllamaLLM(model="llama3.2") # Initialize the LLM object correctly
+llm = OllamaLLM(
+    model="llama3.2",
+    temperature=0.5,
+    max_tokens=150,
+    num_threads=4
+    ) 
 
-# llm.invoke(query)
 
 retriever=vector_store.as_retriever(search_type="similarity", search_kwargs={"k": 3})
 
 prompt_template="""
-You are a helpful and knowledgeable product assistant. Use only the information provided in the Context below to answer the User Question accurately.
+You are a helpful product assistant.
+
+Rules:
+1. DO NOT answer based on any product documents unless the user explicitly asks about shopping, recommendations, buying, prices, or product details.
+2. If the user says "hi", "hello", or asks general questions unrelated to products, respond like a friendly assistant — but DO NOT reference or retrieve any products.
+3. If unsure, say: "I can help with product recommendations. Just tell me what you're looking for!"
+4. Be helpful, concise, and clear. Only show products if truly asked.
 
 Context:
 {context}
 
 User Question:
 {question}
-
-Instructions:
--If user asks about a product, provide details like price, category, and any other relevant information.
-- If the user asks other than about a product, provide a helpful and concise answer based on the context but don't give any product reccomendations.
-- Only answer based on the context above
-- If the answer is not present in the context, say "Sorry, I couldn't find the information in the available documents."
-- Be clear, concise, and helpful
-- If you mention specific products, include relevant details like price and category when available
 
 Answer:"""
 
@@ -49,6 +53,19 @@ retrievalQA=RetrievalQA.from_chain_type(
     chain_type_kwargs={"prompt":prompt}
 )
 
-# result = retrievalQA.invoke({"query": query})
-# print(result['result'])
+general_prompt="""
+
+You are a friendly and polite e-commerce assistant. When a user greets you (e.g., says "hi" or "hello"), respond warmly and guide them to ask about products, offers, or categories.
+
+User: {question}
+
+Assistant:"""
+
+general_prompt_template=PromptTemplate(template=general_prompt,input_variables=["question"])
+
+general_chat_chain = (
+    {"question": RunnablePassthrough()} 
+    | general_prompt_template 
+    | llm
+)
 

@@ -1,20 +1,18 @@
-import React, { useState, useEffect } from 'react';
-import {
-  addToCart,
-  removeFromCart,
-  getCart
-} from '../services/CartService';
+import React, { useState, useEffect } from "react";
+import { addToCart, removeFromCart, getCart } from "../services/CartService";
 
-const ProductCard = ({ product,cartItems = [], onCartChange  }) => {
+const ProductCard = ({ product, cartItems = [], onCartChange }) => {
   const [quantity, setQuantity] = useState(0);
   const [isWishlisted, setIsWishlisted] = useState(false);
 
   const fetchQuantityFromDB = async () => {
     try {
       const cart = await getCart();
-      const cartItem = cart.items.find(item => item.productId === product._id);
-      // console.log("cart-item",cartItem); 
-      setQuantity(cartItem ? cartItem.quantity : 0); 
+      const cartItem = cart.items.find(
+        (item) => item.productId === product._id
+      );
+      // console.log("cart-item",cartItem);
+      setQuantity(cartItem ? cartItem.quantity : 0);
     } catch (error) {
       console.error("Error fetching quantity:", error);
     }
@@ -28,7 +26,7 @@ const ProductCard = ({ product,cartItems = [], onCartChange  }) => {
     try {
       console.log("Adding to cart:", product._id); // Debugging log
       await addToCart(product._id, 1);
-      await fetchQuantityFromDB();  // ✅ ensure UI updates after DB update
+      await fetchQuantityFromDB(); // ensure UI updates after DB update
       if (onCartChange) onCartChange();
     } catch (error) {
       console.error("Error adding to cart:", error);
