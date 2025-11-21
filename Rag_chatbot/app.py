@@ -9,7 +9,7 @@ app = FastAPI()
 def is_product_query(text: str) -> bool:
     product_keywords = [
         "buy", "show", "recommend", "price", "under", "above", "find",
-        "t-shirt", "jeans", "shoes", "dress", "shirts", "pants", "bag"
+        "shirt", "jeans", "shoes", "dress", "shirts", "pants", "bag"
     ]
     return any(word in text.lower() for word in product_keywords)
 

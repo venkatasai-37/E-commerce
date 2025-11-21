@@ -4,8 +4,8 @@ import { Header } from "./Header";
 import { ChatbotWrapper } from "./ChatbotWrapper";
 import { Cart } from "../pages/Cart";
 import Home from "../pages/Home";
-import Mens from "../pages/Mens";
-import Womens from "../pages/Womens";
+import Mens from "../pages/mens";
+import Womens from "../pages/womens";
 import ChatSection from "../pages/Recommendations";
 
 const App = () => {
